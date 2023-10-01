@@ -1,0 +1,11 @@
+@import '../../styles/colors.scss';
+@import "../../styles/fonts.scss";
+
+.newsList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 20px;
+}

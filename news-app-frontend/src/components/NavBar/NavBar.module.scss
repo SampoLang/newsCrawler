@@ -1,0 +1,89 @@
+@import "../../styles/colors.scss";
+@import "../../styles/fonts.scss";
+
+
+.navbar {
+    background-color: $dark-neutral;
+    box-sizing: border-box;
+    padding-left: 12rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    right: 0;
+    flex-wrap: wrap;
+
+    @media (max-width: 992px) {
+        padding-left: 2rem;
+    }
+
+    // This is a media query for small screens
+    @media (max-width: 768px) {
+        padding-left: 1rem;
+
+        // Adjust font size if necessary
+        a {
+            font-size: 0.9em;
+        }
+
+        .navbar__logo .logo {
+            font-size: 1.2em;
+        }
+    }
+
+    .navbar__logo {
+        display: flex;
+        align-items: center;
+
+        .logo {
+            color: $primary;
+            font-size: 1.5em;
+            margin-right: 1rem; // This will provide space between the logo and the first link
+        }
+
+        .logo:hover {
+            cursor: pointer;
+        }
+    }
+
+    a {
+        color: $secondary;
+        text-decoration: none;
+        font-weight: 500;
+        margin: 0 1rem;
+        transition: color 0.3s ease;
+        position: relative;
+
+        &::after {
+            content: '';
+            display: block;
+            height: 0;
+            width: 100%;
+            background-color: $secondary;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            transition: height 0.3s ease;
+        }
+
+        &:hover,
+        &:focus {
+            color: $primary;
+            transform: translateY(-2px);
+
+            &::after {
+                height: 3px; // Underline appears on hover/focus
+            }
+        }
+    }
+
+    .active {
+        //color: $dark-neutral;
+
+        &::after {
+            height: 3px; // When active, the underline appears
+        }
+    }
+}
