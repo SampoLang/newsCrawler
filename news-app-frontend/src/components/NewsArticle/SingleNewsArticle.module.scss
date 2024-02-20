@@ -1,0 +1,51 @@
+@import '../../styles/colors.scss';
+@import "../../styles/fonts.scss";
+
+.cardContainer {
+    width: 100%;
+    background-color: $primary; // A light beige, serves as the primary background color.
+}
+
+.newsCard {
+    background-color: $primary; // A light beige, serves as the primary background color.
+    padding: 20px;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
+    border: 4px solid transparent;
+    transition: border-color 0.3s;
+    margin: 3px;
+    width: 100%;
+
+    &:hover {
+        border-color: $secondary;
+    }
+
+    h3 {
+        color: $dark-neutral; // Almost-black, excellent for main text and key elements.
+        margin-bottom: 10px;
+    }
+
+    p {
+        color: $dark-neutral; // Almost-black for the content.
+        margin-bottom: 20px;
+    }
+
+    .deleteButton {
+        float: right;
+    }
+
+    a {
+        color: $secondary; // A muted taupe, great for subtle text and borders.
+        text-decoration: none;
+        border-bottom: 1px dashed $secondary;
+        transition: border 0.3s;
+
+        &:hover {
+            border-bottom: 1px solid $secondary;
+        }
+    }
+
+    IconButton {
+        color: $secondary;
+    }
+}
